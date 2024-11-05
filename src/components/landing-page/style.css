@@ -1,0 +1,23 @@
+/* style.css */
+.text-fill {
+    position: relative; /* For correct positioning of the pseudo-element */
+    overflow: hidden;   /* To contain the pseudo-element's expansion */
+  }
+  
+  .text-fill::before {
+    content: attr(data-text); /* Use data attribute for dynamic text */
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: cyan; /* Change to your desired fill color */
+    overflow: hidden;
+    width: 0; /* Start with no visible fill */
+    white-space: nowrap; /* Ensure text stays in one line */
+    transition: width 0.5s; /* Smooth fill effect */
+    z-index: -1; /* Ensure text fill is behind the actual text */
+  }
+  
+  .text-fill:hover::before {
+    width: 100%; /* Expand fill on hover */
+  }
+  

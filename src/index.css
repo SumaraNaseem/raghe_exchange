@@ -1,0 +1,257 @@
+@import url("./styles/fonts/font.css");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  max-width: 1920px !important;
+  margin: 0 auto;
+  font-family: "Roboto Condensed Regular", sans-serif;
+  overflow-x: hidden;
+  background-color: var(--color-secondary);
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #000000;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Light Theme Colors */
+:root {
+  --color-primary: rgb(24, 173, 197);
+  --color-primary-medium-light: rgb(24, 176, 200);
+  --color-primary-gradient: linear-gradient(rgb(2, 44, 67), rgb(24, 176, 200));
+  --color-primary-gradient-secondary: linear-gradient(#5ecbdd, #146578);
+  --color-primary-light: rgb(24, 176, 200);
+  --color-primary-dark: rgb(4, 86, 98);
+  --color-primary-medium: #72bbef;
+
+  --color-accent: linear-gradient(180deg, #fb3434, #e80505);
+  --color-accent-light: #faa9ba;
+  --color-accent-medium-gradient: linear-gradient(#fbbcbf, #eb7c81);
+
+  --color-secondary: #ececed;
+  --color-secondary-light: #fff9c1;
+  --color-secondary-dark: #6bbd11;
+  --color-seconday-yellow: #ffd949;
+
+  --color-accent-dark: #cc1f1a;
+
+  --color-background: #ffffff;
+  --color-background-light: #f8f9fa;
+  --color-background-dark: #e2e6ea;
+
+  --color-text: #ffffff;
+  --color-text-light: #6c757d;
+  --color-text-dark: #212529;
+
+  --btn-home-bg: #d4e8f8;
+  --btn-away-bg: #faeff2;
+  --btn-home-gradient: linear-gradient(#61cce6, #29a3c2);
+  --btn-away-gradient: linear-gradient(#fbbcbf, #eb7c81);
+  --btn-place-bet-gradient: linear-gradient(#07af07, #026d02);
+  --btn-cancel-gradient: linear-gradient(#ff5071, #c30529);
+  --btn-home-gradient-start: #61cce6;
+  --btn-home-gradient-end: #29a3c2;
+  --btn-away-gradient-start: #fbbcbf;
+  --btn-away-gradient-end: #eb7c81;
+  --btn-place-bet-gradient-start: #07af07;
+  --btn-place-bet-gradient-end: #026d02;
+  --btn-cancel-gradient-start: #ff5071;
+  --btn-cancel-gradient-end: #c30529;
+}
+
+.btn-gradient {
+  background-size: 200% 200%;
+  transition: background-position 0.3s ease-in-out;
+}
+
+.btn-home {
+  background-image: linear-gradient(
+    to bottom,
+    var(--btn-home-gradient-start),
+    var(--btn-home-gradient-end)
+  );
+}
+
+.btn-home:hover {
+  background-image: linear-gradient(
+    to bottom,
+    var(--btn-home-gradient-end),
+    var(--btn-home-gradient-start)
+  );
+}
+
+.btn-away {
+  background-image: linear-gradient(
+    to bottom,
+    var(--btn-away-gradient-start),
+    var(--btn-away-gradient-end)
+  );
+}
+
+.btn-away:hover {
+  background-image: linear-gradient(
+    to bottom,
+    var(--btn-away-gradient-end),
+    var(--btn-away-gradient-start)
+  );
+}
+
+.btn-place-bet {
+  background-image: linear-gradient(
+    to bottom,
+    var(--btn-place-bet-gradient-start),
+    var(--btn-place-bet-gradient-end)
+  );
+}
+
+.btn-place-bet:hover {
+  background-image: linear-gradient(
+    to bottom,
+    var(--btn-place-bet-gradient-end),
+    var(--btn-place-bet-gradient-start)
+  );
+}
+
+.btn-cancel {
+  background-image: linear-gradient(
+    to bottom,
+    var(--btn-cancel-gradient-start),
+    var(--btn-cancel-gradient-end)
+  );
+}
+
+.btn-cancel:hover {
+  background-image: linear-gradient(
+    to bottom,
+    var(--btn-cancel-gradient-end),
+    var(--btn-cancel-gradient-start)
+  );
+}
+
+#suspended {
+  position: relative;
+}
+
+#suspended::after {
+  color: red;
+  content: "Suspended";
+  cursor: not-allowed;
+  font-size: 12px;
+  font-weight: 600;
+  height: 100%;
+  line-height: 23px;
+  margin: 0;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  width: 100%;
+  z-index: 0;
+  background: url("https://images.staticcontent.io/rde/uimg/bg-disabled.png")
+    rgba(0, 0, 0, 0.5);
+}
+
+#suspended-2 {
+  position: relative;
+}
+
+#suspended-2::after {
+  color: red;
+  content: "Suspended";
+  cursor: not-allowed;
+  font-size: 12px;
+  font-weight: 600;
+  height: 100%;
+  line-height: 23px;
+  margin: 0;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 0;
+  text-align: center;
+  width: 100%;
+  z-index: 0;
+  background: url("https://images.staticcontent.io/rde/uimg/bg-disabled.png")
+    rgba(0, 0, 0, 0.5);
+}
+
+#closed {
+  position: relative;
+}
+
+#closed::after {
+  color: red;
+  content: "Closed";
+  cursor: not-allowed;
+  font-size: 12px;
+  font-weight: 600;
+  height: 100%;
+  line-height: 23px;
+  margin: 0;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 0;
+  text-align: center;
+  width: 100%;
+  z-index: 0;
+  background: url("https://images.staticcontent.io/rde/uimg/bg-disabled.png")
+    rgba(0, 0, 0, 0.5);
+}
+
+
+#inactive {
+  position: relative;
+}
+
+#inactive::after {
+  color: red;
+  content: "";
+  cursor: not-allowed;
+  font-size: 12px;
+  font-weight: 600;
+  height: 100%;
+  line-height: 23px;
+  margin: 0;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 0;
+  text-align: center;
+  width: 100%;
+  z-index: 0;
+  background: url("https://images.staticcontent.io/rde/uimg/bg-disabled.png")
+    rgba(0, 0, 0, 0.5);
+}
